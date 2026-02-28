@@ -1,3 +1,30 @@
 .slider-for img { max-height: 60vh; object-fit: cover; }
 .slider-nav img { height: 90px; width: 160px; object-fit: cover; }
 .slick-slide { outline: none; }
+/* Тёмная тема и шапка */
+body { background-color: #0f141a; color: #eaeef3; }
+.sa-navbar { background-color: #0c1116; border: 1px solid rgba(255,255,255,0.06); }
+.sa-logo { height: 28px; }
+.sa-nav-link { color: #d7dde6; text-decoration: none; font-weight: 600; letter-spacing: .02em; }
+.sa-nav-link:hover { color: #ffffff; }
+.sa-btn-login { background: #e64b4b; color: #fff; font-weight: 700; border-radius: .5rem; padding: .45rem 1rem; }
+.sa-btn-login:hover { background: #d23f3f; color: #fff; }
+
+/* Секции */
+.sa-hero { background: #0c1116; border: 1px solid rgba(255,255,255,0.06); }
+.sa-hero-subtitle { max-width: 820px; }
+.sa-section-dark { background: #121922; border: 1px solid rgba(255,255,255,0.06); }
+.sa-section-darker { background: #1a2430; border: 1px solid rgba(255,255,255,0.06); }
+
+/* Карточки преимуществ */
+.sa-feature { background: #0f141a; border: 1px solid rgba(255,255,255,0.06); }
+.sa-ico-wrap { color: #6ea8fe; }
+.sa-ico { width: 28px; height: 28px; display: inline-block; }
+
+/* Слайдер — уже были базовые, дополним под макет */
+.slider-for img { max-height: 60vh; object-fit: cover; }
+.slider-nav img { height: 90px; width: 160px; object-fit: cover; }
+.slick-slide { outline: none; }
+
+/* Кнопки slick поверх тёмного фона */
+.slick-prev:before, .slick-next:before { color: #eaeef3; }
