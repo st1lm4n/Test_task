@@ -82,8 +82,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    #os.path.join(BASE_DIR, '.venv', 'Lib', 'site-packages', 'adminsortable2', 'static'),
+    BASE_DIR / "static",
+    # os.path.join(BASE_DIR, '.venv', 'Lib', 'site-packages', 'adminsortable2', 'static'),
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
