@@ -2,27 +2,128 @@
 {% load static %}
 {% block content %}
 
-<h1 class="mb-4">Галерея</h1>
-<div class="row g-4">
-    <div class="col-12">
-        <div class="slider-for">
-            {% for slide in slides %}
-            <div>
-                <img class="img-fluid w-100 rounded shadow" src="{{ slide.image.url }}" alt="{{ slide.title }}">
-            </div>
-            {% empty %}
-            <p class="text-muted">Нет слайдов. Добавьте их через админку.</p>
-            {% endfor %}
+<!-- Шапка -->
+
+<header class="sa-navbar rounded-3 px-3 py-3 mb-4">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
+                 alt="Логотип" class="sa-logo">
+        </div>
+        <nav class="d-none d-md-flex align-items-center gap-4 sa-nav">
+            <a href="#benefits" class="sa-nav-link">Преимущества</a>
+            <a href="#photos" class="sa-nav-link">Фотографии</a>
+        </nav>
+        <div class="ms-auto">
+            <a href="#" class="btn btn-sm sa-btn-login">Вход</a>
         </div>
     </div>
-    <div class="col-12">
-        <div class="slider-nav">
-            {% for slide in slides %}
-            <div>
-                <img class="img-fluid rounded" src="{{ slide.image.url }}" alt="{{ slide.title }}">
+</header>
+
+<!-- Hero -->
+
+<section class="sa-hero rounded-3 p-4 p-md-5 mb-5 text-center">
+    <h1 class="display-4 fw-bold mb-3">Космическое агентство</h1>
+    <p class="lead text-secondary mx-auto sa-hero-subtitle">
+        Национальное управление по аэронавтике и исследованию космического пространства —
+        ведомство, относящееся к федеральному правительству США и подчиняющееся
+        непосредственно президенту США.
+    </p>
+</section>
+
+<!-- Преимущества: картинка + 4 пункта -->
+
+<section id="benefits" class="sa-section-dark rounded-3 p-4 p-md-5 mb-5">
+    <div class="row g-4 align-items-center">
+        <div class="col-12 col-lg-6">
+            <img class="img-fluid rounded-3 shadow-lg w-100"
+                 src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop"
+                 alt="Земля">
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="row g-4">
+                <div class="col-12 col-sm-6">
+                    <div class="sa-feature h-100 p-3 rounded-3">
+                        <div class="sa-ico-wrap mb-2">
+                            <!-- иконка шаттла -->
+                            <svg class="sa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M2 16l6-2 6-6 2-6 2 2-6 2-6 6-2 6zM7 17l-3 3 4-1 6-6-2-2-5 6z"/>
+                            </svg>
+                        </div>
+                        <div class="fw-semibold">Спейс шаттлы — пилотируемые корабли</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="sa-feature h-100 p-3 rounded-3">
+                        <div class="sa-ico-wrap mb-2">
+                            <!-- иконка телескопа -->
+                            <svg class="sa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M2 7l6 3 8-4 6 3-8 4-6-3-6 3v-6zM7 16l-3 6h2l1-2h8l1 2h2l-3-6H7z"/>
+                            </svg>
+                        </div>
+                        <div class="fw-semibold">Лучшее телескопическое оборудование</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="sa-feature h-100 p-3 rounded-3">
+                        <div class="sa-ico-wrap mb-2">
+                            <!-- иконка луны -->
+                            <svg class="sa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                            </svg>
+                        </div>
+                        <div class="fw-semibold">Исследовательские станции на Луне — шаг к новым открытиям!</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="sa-feature h-100 p-3 rounded-3">
+                        <div class="sa-ico-wrap mb-2">
+                            <!-- иконка медали -->
+                            <svg class="sa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7l3-7z"/>
+                            </svg>
+                        </div>
+                        <div class="fw-semibold">Золотая медаль по научным исследованиям</div>
+                    </div>
+                </div>
             </div>
-            {% endfor %}
         </div>
     </div>
-</div>
+</section>
+
+<!-- Фотографии (слайдер — сохраняем функционал) -->
+
+<section id="photos" class="sa-section-darker rounded-3 p-4 p-md-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">Фотографии</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-12 col-xl-10">
+            <div class="slider-for">
+                {% for slide in slides %}
+                <div>
+                    <img class="img-fluid w-100 rounded shadow" src="{{ slide.image.url }}" alt="{{ slide.title }}">
+                </div>
+                {% empty %}
+                <p class="text-muted">Нет слайдов. Добавьте их через админку.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        ```
+        <div class="col-12 col-xl-10">
+            <div class="slider-nav">
+                {% for slide in slides %}
+                <div>
+                    <img class="img-fluid rounded" src="{{ slide.image.url }}" alt="{{ slide.title }}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        ```
+
+    </div>
+</section>
+
 {% endblock %}

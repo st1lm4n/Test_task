@@ -6,4 +6,3 @@ app_name = "slides"
 urlpatterns = [
     path("", views.index, name="index"),
 ]
-
