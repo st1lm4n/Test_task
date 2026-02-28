@@ -1,0 +1,14 @@
+Django
+mysqlclient
+Pillow==10.4.0
+
+# для django-filer
+django-filer==3.0.3
+easy-thumbnails==2.8.5
+django-mptt==0.16.0
+django-polymorphic==3.1.0
+
+# сортировка в админке drag&drop
+django-admin-sortable2==2.2
+
+python-dotenv==1.0.0

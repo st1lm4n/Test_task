@@ -1,0 +1,3 @@
+.slider-for img { max-height: 60vh; object-fit: cover; }
+.slider-nav img { height: 90px; width: 160px; object-fit: cover; }
+.slick-slide { outline: none; }

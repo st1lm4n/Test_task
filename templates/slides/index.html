@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1 class="mb-4">Галерея</h1>
+<div class="row g-4">
+    <div class="col-12">
+        <div class="slider-for">
+            {% for slide in slides %}
+            <div>
+                <img class="img-fluid w-100 rounded shadow" src="{{ slide.image.url }}" alt="{{ slide.title }}">
+            </div>
+            {% empty %}
+            <p class="text-muted">Нет слайдов. Добавьте их через админку.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="slider-nav">
+            {% for slide in slides %}
+            <div>
+                <img class="img-fluid rounded" src="{{ slide.image.url }}" alt="{{ slide.title }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
